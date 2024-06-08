@@ -185,10 +185,10 @@
     <!-- Brand Logo -->
     <a href="{{url('/pos')}}" class="brand-link">
       <img src="{{asset(env('Logo', 'logo/techbird/logo.png'))}}"
-           alt="SachinHotel Logo"
+           alt="SMS Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">{{env('APP_NAME', 'TechBirds Solutions')}}</span>
+      <span class="brand-text font-weight-light">{{env('APP_NAME', 'Student Management System')}}</span>
     </a>
 
     <!-- Sidebar -->

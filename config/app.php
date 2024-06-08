@@ -13,7 +13,9 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Student Management System'),
+    'namef' => env('APP_NAME1', 'Student Management'),
+    'namel' => env('APP_NAME2', 'System'),
 
     /*
     |--------------------------------------------------------------------------

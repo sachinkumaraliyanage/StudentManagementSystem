@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App;
+
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -245,6 +246,7 @@ class UserController extends Controller
     public function destroy(Request $request)
     {
         $user = Auth::user();
+
         if ($user != null) {
             App::setLocale(Auth::user()->lang);
             if ($user->type == "SuperAdmin") {
@@ -257,17 +259,17 @@ class UserController extends Controller
                 } else {
                     return new Response(__('language.UserController.m7'), Response::HTTP_UNAUTHORIZED);
                 }
-            }
-        } else if ($user->type == "Admin") {
-            $udata = User::find($request->uid);
-            if ($udata->type != "SuperAdmin") {
-                if ($udata->uname != $user->uname) {
-                    $udata->state = $request->st;
-                    $udata->updated_by = $user->id;
-                    $udata->save();
-                    return new Response(1, Response::HTTP_OK);
-                } else {
-                    return new Response(__('language.UserController.m7'), Response::HTTP_UNAUTHORIZED);
+            } else if ($user->type == "Admin") {
+                $udata = User::find($request->uid);
+                if ($udata->type != "SuperAdmin") {
+                    if ($udata->uname != $user->uname) {
+                        $udata->state = $request->st;
+                        $udata->updated_by = $user->id;
+                        $udata->save();
+                        return new Response(1, Response::HTTP_OK);
+                    } else {
+                        return new Response(__('language.UserController.m7'), Response::HTTP_UNAUTHORIZED);
+                    }
                 }
             } else {
                 return new Response(__('language.UserController.m8'), Response::HTTP_UNAUTHORIZED);
