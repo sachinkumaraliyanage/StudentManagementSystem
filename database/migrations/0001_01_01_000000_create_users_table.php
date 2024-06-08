@@ -12,13 +12,25 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
+            $table->bigIncrements('id');
+            $table->string('uname')->unique();
+            $table->string('fname');
+            $table->string('lname');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('printer')->nullable();
+            $table->string('display')->nullable();
+            $table->enum('type', ['SuperAdmin', 'Admin', 'Manager', 'Supervisor', 'Pos User'])->default('Pos User');
+            $table->enum('lang', ['en', 'si'])->default('en');
+            $table->rememberToken()->nullable();
+            $table->tinyInteger('state')->default('1');
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->dateTime('updated_at')->nullable();
+            $table->dateTime('created_at')->nullable();
+            $table->foreign('updated_by')->references('id')->on('users')->nullOnDelete()->cascadeOnUpdate();
+            $table->foreign('created_by')->references('id')->on('users')->nullOnDelete()->cascadeOnUpdate();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
