@@ -1,33 +1,23 @@
 <?php
 
 return [
-    //root.blade
-    'root_Dashboard' => 'Dashboard',
-    'root_Billing' => 'Billing',
-    'root_Pay_Credit' => 'Pay Credit',
-    'root_Inventory' => 'Inventory',
-    'root_Stock_Manage' => 'Stock Manage',
-    'root_Discount' => 'Discount',
-    'root_Products' => 'Products',
-    'root_Categories' => 'Categories',
-    'root_Suppliers' => 'Suppliers',
-    'root_Customers' => 'Customers',
-    'root_Manage' => 'Manage',
-    'root_Types' => 'Types',
-    'root_Users' => 'Users',
-    'root_Profile' => 'Profile',
-    'root_Reports' => 'Reports',
-    'root_Low_Stock_Products' => 'Low Stock Products',
-    'root_Track_Expiration' => 'Track Expiration',
-    'root_Sales_Report' => 'Sales Report',
-    'root_Paid_Credits' => 'Paid Credits',
-    'root_Inventory_History' => 'Inventory History',
-    'root_Customers_Returned' => 'Customers Returned',
-    'root_Returned_or_Disposed' => 'Returned or Disposed',
-    'root_Restore' => 'Restore',
-    'root_Print_lable' => 'Print Lable',
-    'root_Inventory_Bill' => 'Inventory Bill',
-
+    'nev' => [
+        'PayClassFee' => 'Pay Class Fee',
+        'EnrollClass' => 'Enroll Class',
+        'Attendance' => 'Attendance',
+        'Expenses' => 'Expenses',
+        'StudentManagement' => 'Student Management',
+        'ClassManagement' => 'Class Management',
+        'TeachersManagement' => 'Teachers Management',
+        'UserManagement' => 'User Management',
+        'Report' => [
+            'Report' => 'Report',
+            'FinancialFull' => 'Financial Full',
+            'StudentAttendance' => 'Student Attendance',
+            'Salary' => 'Salary',
+            'ClassFee' => 'Class Fee',
+        ],
+    ],
     '404' => [
         'GO_BACK_HOME' => 'GO BACK HOME'
     ],

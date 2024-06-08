@@ -202,195 +202,110 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-                <a href="{{url('/dashboard')}}" class="nav-link">
+                <a href="{{url('/payclassfee')}}" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                    {{__('language.root_Dashboard')}}
+                    {{__('language.nev.PayClassFee')}}
                 </p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{url('/pos')}}" class="nav-link">
-                <i class="nav-icon fas fa-dollar-sign"></i>
+                <a href="{{url('/enrollclass')}}" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                    {{__('language.root_Billing')}}
+                    {{__('language.nev.EnrollClass')}}
                 </p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{url('/credit')}}" class="nav-link">
-                <i class="nav-icon fas fa-credit-card"></i>
+                <a href="{{url('/attendance')}}" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                    {{__('language.root_Pay_Credit')}}
+                    {{__('language.nev.Attendance')}}
                 </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{url('/expenses')}}" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                    {{__('language.nev.Expenses')}}
+                </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{url('/students')}}" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                    {{__('language.nev.StudentManagement')}}
+                </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{url('/classes')}}" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                    {{__('language.nev.ClassManagement')}}
+                </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{url('/teachers')}}" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                    {{__('language.nev.TeachersManagement')}}
+                </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{url('/users')}}" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                    {{__('language.nev.UserManagement')}}
+                </p>
+                </a>
+            </li>
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-boxes"></i>
               <p>
-                {{__('language.root_Inventory')}}
+                {{__('language.nev.Report.Report')}}
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('/inventories')}}" class="nav-link">
+                <a href="{{url('/report/financial/full')}}" class="nav-link">
                   <i class="fas fa-dolly nav-icon"></i>
-                  <p>{{__('language.root_Stock_Manage')}}</p>
+                  <p>{{__('language.nev.Report.FinancialFull')}}</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('/inventoriesbill')}}" class="nav-link">
-                  <i class="fas fa-file-invoice-dollar nav-icon"></i>
-                  <p>{{__('language.root_Inventory_Bill')}}</p>
+                <a href="{{url('/report/attendance/student')}}" class="nav-link">
+                  <i class="fas fa-dolly nav-icon"></i>
+                  <p>{{__('language.nev.Report.StudentAttendance')}}</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('/discounts')}}" class="nav-link">
-                  <i class="fas fa-tags nav-icon"></i>
-                  <p>{{__('language.root_Discount')}}</p>
+                <a href="{{url('/report/financial/salary')}}" class="nav-link">
+                  <i class="fas fa-dolly nav-icon"></i>
+                  <p>{{__('language.nev.Report.Salary')}}</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('/products')}}" class="nav-link">
-                  <i class="fas fa-box nav-icon"></i>
-                  <p>{{__('language.root_Products')}}</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/categories')}}" class="nav-link">
-                  <i class="fas fa-sitemap nav-icon"></i>
-                  <p>{{__('language.root_Categories')}}</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/suppliers')}}" class="nav-link">
-                  <i class="fas fa-truck-loading nav-icon"></i>
-                  <p>{{__('language.root_Suppliers')}}</p>
+                <a href="{{url('/report/financial/class/fee')}}" class="nav-link">
+                  <i class="fas fa-dolly nav-icon"></i>
+                  <p>{{__('language.nev.Report.ClassFee')}}</p>
                 </a>
               </li>
 
-            </ul>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-user-friends"></i>
-              <p>
-                {{__('language.root_Customers')}}
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-            <li class="nav-item">
-                <a href="{{url('/customers')}}" class="nav-link">
-                  <i class="fas fa-user-clock nav-icon"></i>
-                  <p>{{__('language.root_Manage')}}</p>
-                </a>
-            </li>
-
-              <li class="nav-item">
-                <a href="{{url('/customerstypes')}}" class="nav-link">
-                  <i class="fas fa-house-user nav-icon"></i>
-                  <p>{{__('language.root_Types')}}</p>
-                </a>
-              </li>
 
 
             </ul>
           </li>
 
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-user-shield"></i>
-              <p>
-                {{__('language.root_Users')}}
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('/users/show')}}" class="nav-link">
-                  <i class="fas fa-id-card-alt nav-icon"></i>
-                  <p>{{__('language.root_Profile')}}</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/users')}}" class="nav-link">
-                  <i class="fas fa-user-tie nav-icon"></i>
-                  <p>{{__('language.root_Manage')}}</p>
-                </a>
-              </li>
 
-            </ul>
-            <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-chart-pie"></i>
-                  <p>
-                    {{__('language.root_Reports')}}
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="{{url('/lowstock')}}" class="nav-link">
-                      <i class="fas fa-fill-drip nav-icon"></i>
-                      <p>{{__('language.root_Low_Stock_Products')}}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{url('/expiration')}}" class="nav-link">
-                      <i class="fas fa-calendar-times nav-icon"></i>
-                      <p>{{__('language.root_Track_Expiration')}}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{url('/sales')}}" class="nav-link">
-                      <i class="fas fa-chart-line nav-icon"></i>
-                      <p>{{__('language.root_Sales_Report')}}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{url('/paidcredit')}}" class="nav-link">
-                      <i class="nav-icon fas fa-credit-card"></i>
-                      <p>{{__('language.root_Paid_Credits')}}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{url('/inventorieshistory')}}" class="nav-link">
-                      <i class="nav-icon fas fa-history"></i>
-                      <p>{{__('language.root_Inventory_History')}}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{url('/customersreturns')}}" class="nav-link">
-                      <i class="fas fa-level-down-alt nav-icon"></i>
-                      <p>{{__('language.root_Customers_Returned')}}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{url('/disposed')}}" class="nav-link">
-                      <i class="fas fa-trash-restore nav-icon"></i>
-                      <p>{{__('language.root_Returned_or_Disposed')}}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{url('/restore')}}" class="nav-link">
-                      <i class="fas fa-retweet nav-icon"></i>
-                      <p>{{__('language.root_Restore')}}</p>
-                    </a>
-                  </li>
-
-                </ul>
-          </li>
-            <li class="nav-item">
-                <a href="{{url('/printlable')}}" class="nav-link">
-                <i class="nav-icon fas fa-print"></i>
-                <p>
-                    {{__('language.root_Print_lable')}}
-                </p>
-                </a>
-            </li>
 
 
         </ul>
