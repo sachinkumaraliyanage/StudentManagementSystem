@@ -103,7 +103,7 @@ class UserController extends Controller
         $auser = Auth::user();
         if ($auser == null) {
             return redirect(url('/'));
-        } else if ($auser->type == 'SuperAdmin') {
+        } else if ($auser->type == 'SuperAdmin2') {
             $typelist = ['Pos User', 'Supervisor', 'Manager', 'Admin', 'SuperAdmin'];
             $user = User::find($id);
             return view('profile', compact('typelist', 'user'));
