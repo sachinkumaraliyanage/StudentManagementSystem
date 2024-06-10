@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
@@ -58,8 +58,14 @@ class LoginController extends Controller
         }
     }
 
+    protected function redirectPath()
+    {
+        return RouteServiceProvider::HOME;
+    }
+
     protected function redirectTo()
     {
+
         Session::put('lang', auth()->user()->lang);
         return RouteServiceProvider::HOME;
         // if (in_array(auth()->user()->type, ['SuperAdmin', 'Admin', 'Manager'])) {

@@ -18,7 +18,7 @@ Route::get('/', [LoginController::class, 'showLoginForm']);
 Auth::routes(['register' => false]);
 
 //user
-Route::get('/users', [UserController::class, 'index']);
+Route::get('/users', [UserController::class, 'index'])->name('home');
 Route::post('/users/task/active', [UserController::class, 'destroy']);
 Route::post('/users/task/setpassword', [UserController::class, 'SetPassword']);
 Route::post('/users/find/freeoverwrite', [UserController::class, 'FreeOverwite']);
