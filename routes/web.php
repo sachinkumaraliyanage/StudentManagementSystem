@@ -33,3 +33,12 @@ Route::post('/users/{id}/edit', [UserController::class, 'update']);
 Route::post('/users/task/chengepasword', [UserController::class, 'ChangePassword']);
 Route::get('/users/show', [UserController::class, 'ProfileEdit']);
 Route::post('/users/show', [UserController::class, 'ProfileUpdate']);
+
+
+//Teacher Route
+Route::get('/teachers', [App\Http\Controllers\TeacherController::class, 'index']);
+Route::get('/teachers/create', [App\Http\Controllers\TeacherController::class, 'create']);
+Route::post('/teachers/create', [App\Http\Controllers\TeacherController::class, 'store']);
+Route::get('/teachers/{id}/edit', [App\Http\Controllers\TeacherController::class, 'edit']);
+Route::post('/teachers/{id}/edit', [App\Http\Controllers\TeacherController::class, 'update']);
+Route::post('/teachers/status/{status}', [App\Http\Controllers\TeacherController::class, 'destroy']);
