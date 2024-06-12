@@ -13,6 +13,7 @@ class Teacher extends Model
         'fname',
         'lname',
         'nic',
+        'name_prefix',
         'gender',
         'pno',
         'email',

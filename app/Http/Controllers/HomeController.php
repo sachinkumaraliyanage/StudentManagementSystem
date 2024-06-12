@@ -25,4 +25,17 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function lang($lang)
+    {
+        $user = Auth::user();
+        if ($user == null) {
+            return redirect(url('/'));
+        } else {
+            $user->lang = $lang;
+            $user->save();
+            Session::put('lang', $user->lang);
+            return redirect()->back();
+        }
+    }
 }
