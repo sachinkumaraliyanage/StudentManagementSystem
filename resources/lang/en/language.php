@@ -18,6 +18,9 @@ return [
             'ClassFee' => 'Class Fee',
         ],
     ],
+    'teachersManage' => [
+        'datatable' => []
+    ],
     '404' => [
         'GO_BACK_HOME' => 'GO BACK HOME'
     ],

@@ -20,8 +20,8 @@ class TeacherController extends Controller
         if ($user == null) {
             return redirect(url('/'));
         } else if (in_array($user->type, $this->authgroup)) {
-            $users = User::orderBy('updated_at', 'desc')->get();
-            return view('teachermanage', compact('users'));
+            $teachers = Teacher::orderBy('updated_at', 'desc')->get();
+            return view('teachermanage', compact('teachers'));
         } else {
             return view('errors.500');
         }
