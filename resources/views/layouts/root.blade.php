@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" href="{{asset(env('Logo', 'logo/techbird/logo.png'))}}">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free6/css/all.min.css')}}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
   <!-- overlayScrollbars -->
@@ -203,7 +203,7 @@
                with font-awesome or any other icon font library -->
             <li class="nav-item">
                 <a href="{{url('/payclassfee')}}" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fas fa-solid fa-file-invoice-dollar"></i>
                 <p>
                     {{__('language.nev.PayClassFee')}}
                 </p>
@@ -211,7 +211,7 @@
             </li>
             <li class="nav-item">
                 <a href="{{url('/enrollclass')}}" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fas  fa-mortar-board"></i>
                 <p>
                     {{__('language.nev.EnrollClass')}}
                 </p>
@@ -219,7 +219,7 @@
             </li>
             <li class="nav-item">
                 <a href="{{url('/attendance')}}" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fa-solid fa-user-check"></i>
                 <p>
                     {{__('language.nev.Attendance')}}
                 </p>
@@ -227,7 +227,7 @@
             </li>
             <li class="nav-item">
                 <a href="{{url('/expenses')}}" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fa-solid fa-circle-dollar-to-slot"></i>
                 <p>
                     {{__('language.nev.Expenses')}}
                 </p>
@@ -235,7 +235,7 @@
             </li>
             <li class="nav-item">
                 <a href="{{url('/students')}}" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fa-solid fa-user-graduate"></i>
                 <p>
                     {{__('language.nev.StudentManagement')}}
                 </p>
@@ -243,7 +243,7 @@
             </li>
             <li class="nav-item">
                 <a href="{{url('/classes')}}" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="fa-solid fa-house-circle-check"></i>
                 <p>
                     {{__('language.nev.ClassManagement')}}
                 </p>
@@ -251,7 +251,7 @@
             </li>
             <li class="nav-item">
                 <a href="{{url('/teachers')}}" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fa-solid fa-user-tie"></i>
                 <p>
                     {{__('language.nev.TeachersManagement')}}
                 </p>
@@ -259,7 +259,7 @@
             </li>
             <li class="nav-item">
                 <a href="{{url('/users')}}" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fa-solid fa-user-gear"></i>
                 <p>
                     {{__('language.nev.UserManagement')}}
                 </p>
@@ -268,7 +268,7 @@
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-boxes"></i>
+              <i class="fa-solid fa-list-check"></i>
               <p>
                 {{__('language.nev.Report.Report')}}
                 <i class="right fas fa-angle-left"></i>
@@ -277,25 +277,25 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{url('/report/financial/full')}}" class="nav-link">
-                  <i class="fas fa-dolly nav-icon"></i>
+                  <i class="fas fa-solid fa-coins"></i>
                   <p>{{__('language.nev.Report.FinancialFull')}}</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url('/report/attendance/student')}}" class="nav-link">
-                  <i class="fas fa-dolly nav-icon"></i>
+                  <i class="fas fa-solid fa-user-pen"></i>
                   <p>{{__('language.nev.Report.StudentAttendance')}}</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url('/report/financial/salary')}}" class="nav-link">
-                  <i class="fas fa-dolly nav-icon"></i>
+                  <i class="fas fa-solid fa-sack-dollar"></i>
                   <p>{{__('language.nev.Report.Salary')}}</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url('/report/financial/class/fee')}}" class="nav-link">
-                  <i class="fas fa-dolly nav-icon"></i>
+                  <i class="fas fa-solid fa-hand-holding-dollar"></i>
                   <p>{{__('language.nev.Report.ClassFee')}}</p>
                 </a>
               </li>
