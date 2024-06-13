@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,13 @@ Route::post('/teachers/create', [TeacherController::class, 'store']);
 Route::get('/teachers/{id}/edit', [TeacherController::class, 'edit']);
 Route::post('/teachers/{id}/edit', [TeacherController::class, 'update']);
 Route::post('/teachers/active', [TeacherController::class, 'destroy']);
+
+//Student Route
+Route::get('/students', [StudentController::class, 'index']);
+Route::post('/students/create', [StudentController::class, 'store']);
+Route::get('/students/{id}/edit', [StudentController::class, 'edit']);
+Route::post('/students/{id}/edit', [StudentController::class, 'update']);
+Route::post('/students/active', [StudentController::class, 'destroy']);
 
 
 //csrf refresh
