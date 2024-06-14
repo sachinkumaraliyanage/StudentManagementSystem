@@ -23,7 +23,7 @@ class StudentController extends Controller
         } else if (in_array($user->type, $this->authgroup)) {
             $students = student::orderBy('updated_at', 'desc')->get();
             $genderArray = ['Male', 'Female', 'Other'];
-            return view('teachermanage', compact('teachers', 'genderArray'));
+            return view('studentmanage', compact('students', 'genderArray'));
         } else {
             return view('errors.500');
         }
@@ -53,16 +53,15 @@ class StudentController extends Controller
                 'gender' => ['required', 'in:Male,Female,Other'],
                 'studentphone' => ['required', 'max:255', 'unique:students'],
                 'dob' => ['max:10'],
-                
+
                 'Parentname' => ['required', 'max:255'],
                 'ParentPhone' => ['required', 'max:255'],
                 'ParentAddress' => ['required', 'max:255'],
                 'ParentNic' => ['required', 'max:10', 'regex:/^\d{9}[VvXx]$/', 'unique:students'],
-                
+
                 'school' => ['required', 'max:255'],
-                'grade' => ['max:6'],
                 'email' => ['email', 'max:255', 'unique:teachers'],
-              
+
             ]);
             $studentData = new Student();
             $studentData->fname = $request->fname;
@@ -70,15 +69,14 @@ class StudentController extends Controller
             $studentData->gender = $request->gender;
             $studentData->studentphone = $request->studentphone;
             $studentData->dob = $request->dob;
-          
+
             $studentData->Parentname = $request->Parentname;
             $studentData->ParentPhone = $request->ParentPhone;
             $studentData->ParentAddress = $request->ParentAddress;
             $studentData->ParentNic = strtoupper($request->ParentNic);
             $studentData->school = $request->school;
-            $studentData->grade = $request->grade;
             $studentData->email = $request->email;
-        
+
             $studentData->updated_by = $user->id;
             $studentData->created_by = $user->id;
             $studentData->save();
@@ -89,13 +87,7 @@ class StudentController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(student $student)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -131,14 +123,13 @@ class StudentController extends Controller
                 'gender' => ['required', 'in:Male,Female,Other'],
                 'studentphone' => ['required', 'max:255', 'unique:students'],
                 'dob' => ['max:10'],
-                
+
                 'Parentname' => ['required', 'max:255'],
                 'ParentPhone' => ['required', 'max:255'],
                 'ParentAddress' => ['required', 'max:255'],
                 'ParentNic' => ['required', 'max:10', 'regex:/^\d{9}[VvXx]$/', 'unique:students'],
-                
+
                 'school' => ['required', 'max:255'],
-                'grade' => ['max:6'],
                 'email' => ['email', 'max:255', 'unique:teachers'],
             ]);
             $studentData = student::find($id);
@@ -163,7 +154,7 @@ class StudentController extends Controller
             $studentData->gender = $request->gender;
             $studentData->studentphone = $request->studentphone;
             $studentData->dob = $request->dob;
-          
+
             $studentData->Parentname = $request->Parentname;
             $studentData->ParentPhone = $request->ParentPhone;
             $studentData->ParentAddress = $request->ParentAddress;
@@ -171,7 +162,7 @@ class StudentController extends Controller
             $studentData->school = $request->school;
             $studentData->grade = $request->grade;
             $studentData->email = $request->email;
-        
+
             $studentData->updated_by = $user->id;
             $studentData->created_by = $user->id;
             $studentData->save();

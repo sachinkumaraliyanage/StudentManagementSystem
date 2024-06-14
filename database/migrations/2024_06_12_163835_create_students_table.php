@@ -12,22 +12,31 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->bigIncrements ('id');
-            $table->string ('fname');
-            $table->string ('lname');
-            $table->enum ('gender', ['Male','Female','Other']);
-            $table->string ('studentphone') ->nullable();
-            $table->string ('dob');
+            $table->bigIncrements('id');
+            $table->string('fname');
+            $table->string('lname');
+            $table->enum('gender', ['Male', 'Female', 'Other']);
+            $table->string('student_phone')->nullable();
+            $table->date('dob');
+            $table->string('nic')->nullable();
+            $table->string('school')->nullable();
+            $table->string('email')->unique();
+            $table->string('address')->nullable();
 
-            $table->string ('Parentname'); 
-            $table->string ('ParentPhone');
-            $table->string ('ParentAddress');
-            $table->string ('ParentNic');
+            $table->string('parent_name')->nullable();
+            $table->string('parent_phone')->nullable();
+            $table->string('parent_address')->nullable();
+            $table->string('parent_nic')->nullable();
+            $table->string('parent_email')->unique();
 
-            $table->string ('school');
-            $table->string ('grade');
-            $table->string ('email') ->unique();
 
+            $table->tinyInteger('state')->default('1');
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->dateTime('updated_at')->nullable();
+            $table->dateTime('created_at')->nullable();
+            $table->foreign('updated_by')->references('id')->on('users')->nullOnDelete()->cascadeOnUpdate();
+            $table->foreign('created_by')->references('id')->on('users')->nullOnDelete()->cascadeOnUpdate();
         });
     }
 

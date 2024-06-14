@@ -241,10 +241,10 @@ App::setLocale(Auth::user()->lang);
                             </span>
                         @enderror
                 </div>
-    
+
                 <div class="form-group col-md-4">
                     <label for="dob">Student's Birthday</label>
-                    <input type="text" class="form-control @error('dob') is-invalid @enderror" id="dob" name="dob"
+                    <input type="date" class="form-control @error('dob') is-invalid @enderror" id="dob" name="dob"
                         autocomplete="off"
                         @if (isset($studentData))
                             value="{{ $studentData->dob}}"
@@ -276,7 +276,7 @@ App::setLocale(Auth::user()->lang);
                         @enderror
                 </div>
 
-                
+
                 <div class="form-group col-md-4">
                     <label for="studentphone">Parent's Phone</label>
                     <input type="text" class="form-control @error('ParentPhone') is-invalid @enderror" id="ParentPhone" name="ParentPhone"
@@ -310,7 +310,7 @@ App::setLocale(Auth::user()->lang);
                             </span>
                         @enderror
                 </div>
-        
+
                 <div class="form-group col-md-4">
                 <label for="ParentNic">Parent's NIC</label>
                 <input type="text" class="form-control @error('ParentNic') is-invalid @enderror" id="ParentNic" name="ParentNic"
@@ -345,23 +345,8 @@ App::setLocale(Auth::user()->lang);
                     @enderror
             </div>
 
-            <div class="form-group col-md-4">
-                <label for="grade">Grade</label>
-                <textarea   rows="3" class="form-control @error('grade') is-invalid @enderror" id="grade" name="grade"
-                    autocomplete="off">
-                    @if (isset($studentData))
-                        {{ $studentData->grade}}
-                    @else
-                        {{ old('grade') }}
-                    @endif
-                    </textarea>
-                    @error('grade')
-                        <span class="invalid-feedback" style="display: block;" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-            </div>
-    
+
+
             <div class="form-group col-md-4">
                 <label for="email">Email</label>
                 <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
@@ -381,9 +366,9 @@ App::setLocale(Auth::user()->lang);
 
             <div class="form-group col-md-4">
             </div>
-            
 
-            
+
+
             <div class="form-group col-md-4">
                 <label for="">&nbsp;</label>
                 @if (isset($studentData))
@@ -419,12 +404,12 @@ App::setLocale(Auth::user()->lang);
                         <td>{{$student->id}}</td>
                         <td>{{$student->fname.' '.$student->lname}}</td>
                         <td>{{$student->gender}}</td>
-                        <td>{{$student->sPhone}}</td>
+                        <td>{{$student->student_phone}}</td>
                         <td>{{$student->email}}</td>
-                        <td>{{$student->pName}}</td>
-                        <td>{{$student->pAdd}}</td>
-                        <td>{{$student->pPhone}}</td>
-                        @if ($teacher->state=='1')
+                        <td>{{$student->parent_name}}</td>
+                        <td>{{$student->parent_address}}</td>
+                        <td>{{$student->parent_phone}}</td>
+                        @if ($student->state=='1')
                             <td align="center" id="del{{$student->id}}"><i class="fas fa-check-square dataacc text-xl" onclick="del('{{$student->id}}','{{$student->state}}')"></i>
                             </td>
                         @else
