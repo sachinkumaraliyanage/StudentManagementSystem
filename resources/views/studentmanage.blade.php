@@ -32,6 +32,9 @@ App::setLocale(Auth::user()->lang);
 
 <link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
 
+{{-- daterangepicker --}}
+<link rel="stylesheet" href="{{asset('plugins/daterangepicker/daterangepicker.css')}}">
+
 <!-- datatable js-->
 
 <script src="{{asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
@@ -263,7 +266,7 @@ App::setLocale(Auth::user()->lang);
 
 
             </div>
-           
+
 
                 <div class="form-group col-md-4">
                     <label for="nic">Student's NIC</label>
@@ -402,7 +405,7 @@ App::setLocale(Auth::user()->lang);
                     @enderror
             </div>
 
-           
+
             <div class="form-group col-md-4">
                 <label for="parent_email">Parent's Email</label>
                 <input type="parent_email" class="form-control @error('parent_email') is-invalid @enderror" id="parent_email" name="parent_email"
@@ -507,6 +510,19 @@ App::setLocale(Auth::user()->lang);
             });
             $('.multipleselect').select2({
 
+            });
+
+            $('#dob').daterangepicker({
+                "singleDatePicker": true,
+                "linkedCalendars": false,
+                "autoUpdateInput": false,
+                "autoApply": true,
+                "maxDate": new Date().toISOString().slice(0, 10),
+                locale: {
+                    format: 'YYYY-MM-DD'
+                },
+            }, function(chosen_date) {
+                $('#dob').val(chosen_date.format('YYYY-MM-DD'));;
             });
         });
         function del(tid,st){
