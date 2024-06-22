@@ -161,7 +161,9 @@ App::setLocale(Auth::user()->lang);
 
 <section class="content">
     <div class="container-fluid">
-
+        @if($errors->any())
+        {!! implode('', $errors->all('<div>:message</div>')) !!}
+    @endif
         <form autocomplete="off"  id="studentform"
         @if (isset($studentData))
             action="{{url('/students/'.$studentData->id.'/edit')}}"
@@ -245,7 +247,7 @@ App::setLocale(Auth::user()->lang);
                 <div class="form-group col-md-4">
                     <label for="dob">Student's Birthday</label>
                     <input type="date" class="form-control @error('dob') is-invalid @enderror" id="dob" name="dob"
-                        autocomplete="off"
+                        autocomplete="off" maxlength="10" data-date-format="DD MM YYYY"
                         @if (isset($studentData))
                             value="{{ $studentData->dob}}"
                         @else
@@ -258,6 +260,10 @@ App::setLocale(Auth::user()->lang);
                             </span>
                         @enderror
                 </div>
+
+
+            </div>
+           
 
                 <div class="form-group col-md-4">
                     <label for="nic">Student's NIC</label>
@@ -328,16 +334,16 @@ App::setLocale(Auth::user()->lang);
                 </div>
 
                 <div class="form-group col-md-4">
-                    <label for="Parent_name">Parent's Name</label>
-                    <input type="text" class="form-control @error('Parent_name') is-invalid @enderror" id="Parent_name" name="Parent_name"
+                    <label for="parent_name">Parent's Name</label>
+                    <input type="text" class="form-control @error('parent_name') is-invalid @enderror" id="parent_name" name="parent_name"
                         autocomplete="off"
                         @if (isset($studentData))
-                            value="{{ $studentData->Parent_name}}"
+                            value="{{ $studentData->parent_name}}"
                         @else
-                            value="{{ old('Parent_name') }}"
+                            value="{{ old('parent_name') }}"
                         @endif
                         >
-                        @error('Parent_name')
+                        @error('parent_name')
                             <span class="invalid-feedback" style="display: block;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('parent_name')->nullable();
             $table->string('parent_phone')->nullable();
             $table->string('parent_address')->nullable();
-            $table->string('parent_nic')->nullable();
+            $table->string('parent_nic');
             $table->string('parent_email')->unique();
 
 
