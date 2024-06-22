@@ -40,8 +40,9 @@ class StudentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorestudentRequest $request)
+    public function store(Request $request)
     {
+        // dd($request);
         $user = Auth::user();
         if ($user == null) {
             return redirect(url('/'));
@@ -69,7 +70,7 @@ class StudentController extends Controller
             $studentData->fname = $request->fname;
             $studentData->lname = $request->lname;
             $studentData->gender = $request->gender;
-            $studentData->studentphone = $request->student_phone;
+            $studentData->student_phone = $request->student_phone;
             $studentData->dob = $request->dob;
             $studentData->nic = strtoupper($request->nic);
             $studentData->school = $request->school;
