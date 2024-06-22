@@ -51,31 +51,36 @@ class StudentController extends Controller
                 'fname' => ['required', 'max:255'],
                 'lname' => ['required', 'max:255'],
                 'gender' => ['required', 'in:Male,Female,Other'],
-                'studentphone' => ['required', 'max:255', 'unique:students'],
+                'student_phone' => ['required', 'max:255', 'unique:students'],
                 'dob' => ['max:10'],
-
-                'Parentname' => ['required', 'max:255'],
-                'ParentPhone' => ['required', 'max:255'],
-                'ParentAddress' => ['required', 'max:255'],
-                'ParentNic' => ['required', 'max:10', 'regex:/^\d{9}[VvXx]$/', 'unique:students'],
-
+                'nic' => ['max:10', 'regex:/^\d{9}[VvXx]$/', 'unique:students'],
                 'school' => ['required', 'max:255'],
-                'email' => ['email', 'max:255', 'unique:teachers'],
+                'email' => ['email', 'max:255', 'unique:students'],
+                'address' => ['required', 'max:255'],
+
+                'parent_name' => ['required', 'max:255'],
+                'parent_phone' => ['required', 'max:255'],
+                'parent_address' => ['required', 'max:255'],
+                'Parent_nic' => ['required', 'max:10', 'regex:/^\d{9}[VvXx]$/'],
+                'parent_email' => ['email', 'max:255'],
 
             ]);
             $studentData = new Student();
             $studentData->fname = $request->fname;
             $studentData->lname = $request->lname;
             $studentData->gender = $request->gender;
-            $studentData->studentphone = $request->studentphone;
+            $studentData->studentphone = $request->student_phone;
             $studentData->dob = $request->dob;
-
-            $studentData->Parentname = $request->Parentname;
-            $studentData->ParentPhone = $request->ParentPhone;
-            $studentData->ParentAddress = $request->ParentAddress;
-            $studentData->ParentNic = strtoupper($request->ParentNic);
+            $studentData->nic = strtoupper($request->nic);
             $studentData->school = $request->school;
             $studentData->email = $request->email;
+            $studentData->address = $request->address;
+
+            $studentData->parent_name = $request->Parent_name;
+            $studentData->parent_Phone = $request->parent_phone;
+            $studentData->parent_address = $request->parent_address;
+            $studentData->parent_nic = strtoupper($request->parent_nic);
+            $studentData->parent_email = $request->parent_email;
 
             $studentData->updated_by = $user->id;
             $studentData->created_by = $user->id;
@@ -121,16 +126,18 @@ class StudentController extends Controller
                 'fname' => ['required', 'max:255'],
                 'lname' => ['required', 'max:255'],
                 'gender' => ['required', 'in:Male,Female,Other'],
-                'studentphone' => ['required', 'max:255', 'unique:students'],
+                'student_phone' => ['required', 'max:255', 'unique:students'],
                 'dob' => ['max:10'],
-
-                'Parentname' => ['required', 'max:255'],
-                'ParentPhone' => ['required', 'max:255'],
-                'ParentAddress' => ['required', 'max:255'],
-                'ParentNic' => ['required', 'max:10', 'regex:/^\d{9}[VvXx]$/', 'unique:students'],
-
+                'nic' => ['max:10', 'regex:/^\d{9}[VvXx]$/', 'unique:students'],
                 'school' => ['required', 'max:255'],
-                'email' => ['email', 'max:255', 'unique:teachers'],
+                'email' => ['email', 'max:255', 'unique:students'],
+                'address' => ['required', 'max:255'],
+
+                'parent_name' => ['required', 'max:255'],
+                'parent_phone' => ['required', 'max:255'],
+                'parent_address' => ['required', 'max:255'],
+                'Parent_nic' => ['required', 'max:10', 'regex:/^\d{9}[VvXx]$/'],
+                'parent_email' => ['email', 'max:255'],
             ]);
             $studentData = student::find($id);
             // if ($request->nic != $teacherData->nic) {
@@ -149,19 +156,22 @@ class StudentController extends Controller
             //     ]);
             // }
 
+            $studentData = new Student();
             $studentData->fname = $request->fname;
             $studentData->lname = $request->lname;
             $studentData->gender = $request->gender;
-            $studentData->studentphone = $request->studentphone;
+            $studentData->studentphone = $request->student_phone;
             $studentData->dob = $request->dob;
-
-            $studentData->Parentname = $request->Parentname;
-            $studentData->ParentPhone = $request->ParentPhone;
-            $studentData->ParentAddress = $request->ParentAddress;
-            $studentData->ParentNic = strtoupper($request->ParentNic);
+            $studentData->nic = strtoupper($request->nic);
             $studentData->school = $request->school;
-            $studentData->grade = $request->grade;
             $studentData->email = $request->email;
+            $studentData->address = $request->address;
+
+            $studentData->parent_name = $request->Parent_name;
+            $studentData->parent_Phone = $request->parent_phone;
+            $studentData->parent_address = $request->parent_address;
+            $studentData->parent_nic = strtoupper($request->parent_nic);
+            $studentData->parent_email = $request->parent_email;
 
             $studentData->updated_by = $user->id;
             $studentData->created_by = $user->id;

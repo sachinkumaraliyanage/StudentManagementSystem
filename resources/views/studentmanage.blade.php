@@ -226,16 +226,16 @@ App::setLocale(Auth::user()->lang);
                 </div>
 
                 <div class="form-group col-md-4">
-                    <label for="studentphone">Student Phone</label>
-                    <input type="text" class="form-control @error('studentphone') is-invalid @enderror" id="studentphone" name="studentphone"
+                    <label for="student_phone">Student Phone</label>
+                    <input type="text" class="form-control @error('student_phone') is-invalid @enderror" id="student_phone" name="student_phone"
                         autocomplete="off"
                         @if (isset($studentData))
-                            value="{{ $studentData->studentphone}}"
+                            value="{{ $studentData->student_phone}}"
                         @else
-                            value="{{ old('studentphone') }}"
+                            value="{{ old('student_phone') }}"
                         @endif
                         >
-                        @error('studentphone')
+                        @error('student_phone')
                             <span class="invalid-feedback" style="display: block;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -260,34 +260,50 @@ App::setLocale(Auth::user()->lang);
                 </div>
 
                 <div class="form-group col-md-4">
-                    <label for="lname">Parent's Name</label>
-                    <input type="text" class="form-control @error('Parentname') is-invalid @enderror" id="Parentname" name="Parentname"
+                    <label for="nic">Student's NIC</label>
+                    <input type="text" class="form-control @error('nic') is-invalid @enderror" id="nic" name="nic"
                         autocomplete="off"
                         @if (isset($studentData))
-                            value="{{ $studentData->Parentname}}"
+                            value="{{ $studentData->nic}}"
                         @else
-                            value="{{ old('Parentname') }}"
+                            value="{{ old('nic') }}"
                         @endif
                         >
-                        @error('Parentname')
+                        @error('nic')
                             <span class="invalid-feedback" style="display: block;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                 </div>
 
+                <div class="form-group col-md-4">
+                    <label for="school">School</label>
+                    <textarea   rows="3" class="form-control @error('school') is-invalid @enderror" id="school" name="school"
+                        autocomplete="off">
+                        @if (isset($studentData))
+                            {{ $studentData->school}}
+                        @else
+                            {{ old('school') }}
+                        @endif
+                        </textarea>
+                        @error('school')
+                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                </div>
 
                 <div class="form-group col-md-4">
-                    <label for="studentphone">Parent's Phone</label>
-                    <input type="text" class="form-control @error('ParentPhone') is-invalid @enderror" id="ParentPhone" name="ParentPhone"
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
                         autocomplete="off"
                         @if (isset($studentData))
-                            value="{{ $studentData->ParentPhone}}"
+                            value="{{ $studentData->email}}"
                         @else
-                            value="{{ old('ParentPhone') }}"
+                            value="{{ old('email') }}"
                         @endif
                         >
-                        @error('ParentPhone')
+                        @error('email')
                             <span class="invalid-feedback" style="display: block;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -296,15 +312,15 @@ App::setLocale(Auth::user()->lang);
 
                 <div class="form-group col-md-4">
                     <label for="address">Address</label>
-                    <textarea   rows="3" class="form-control @error('ParentAddress') is-invalid @enderror" id="ParentAddress" name="ParentAddress"
+                    <textarea   rows="3" class="form-control @error('address') is-invalid @enderror" id="address" name="address"
                         autocomplete="off">
                         @if (isset($studentData))
-                            {{ $studentData->ParentAddress}}
+                            {{ $studentData->address}}
                         @else
-                            {{ old('ParentAddress') }}
+                            {{ old('address') }}
                         @endif
                         </textarea>
-                        @error('ParentAddress')
+                        @error('address')
                             <span class="invalid-feedback" style="display: block;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -312,52 +328,86 @@ App::setLocale(Auth::user()->lang);
                 </div>
 
                 <div class="form-group col-md-4">
-                <label for="ParentNic">Parent's NIC</label>
-                <input type="text" class="form-control @error('ParentNic') is-invalid @enderror" id="ParentNic" name="ParentNic"
+                    <label for="Parent_name">Parent's Name</label>
+                    <input type="text" class="form-control @error('Parent_name') is-invalid @enderror" id="Parent_name" name="Parent_name"
+                        autocomplete="off"
+                        @if (isset($studentData))
+                            value="{{ $studentData->Parent_name}}"
+                        @else
+                            value="{{ old('Parent_name') }}"
+                        @endif
+                        >
+                        @error('Parent_name')
+                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                </div>
+
+
+                <div class="form-group col-md-4">
+                    <label for="parent_phone">Parent's Phone</label>
+                    <input type="text" class="form-control @error('parent_phone') is-invalid @enderror" id="parent_phone" name="parent_phone"
+                        autocomplete="off"
+                        @if (isset($studentData))
+                            value="{{ $studentData->parent_phone}}"
+                        @else
+                            value="{{ old('parent_phone') }}"
+                        @endif
+                        >
+                        @error('parent_phone')
+                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="parent_address">Address</label>
+                    <textarea   rows="3" class="form-control @error('parent_address') is-invalid @enderror" id="parent_address" name="parent_address"
+                        autocomplete="off">
+                        @if (isset($studentData))
+                            {{ $studentData->parent_address}}
+                        @else
+                            {{ old('parent_address') }}
+                        @endif
+                        </textarea>
+                        @error('parent_address')
+                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                </div>
+
+                <div class="form-group col-md-4">
+                <label for="parent_nic">Parent's NIC</label>
+                <input type="text" class="form-control @error('parent_nic') is-invalid @enderror" id="parent_nic" name="parent_nic"
                     autocomplete="off"
                     @if (isset($studentData))
-                        value="{{ $studentData->ParentNic}}"
+                        value="{{ $studentData->parent_nic}}"
                     @else
-                        value="{{ old('ParentNic') }}"
+                        value="{{ old('parent_nic') }}"
                     @endif
                     >
-                    @error('ParentNic')
+                    @error('parent_nic')
                         <span class="invalid-feedback" style="display: block;" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
             </div>
 
+           
             <div class="form-group col-md-4">
-                <label for="school">School</label>
-                <textarea   rows="3" class="form-control @error('school') is-invalid @enderror" id="school" name="school"
-                    autocomplete="off">
-                    @if (isset($studentData))
-                        {{ $studentData->school}}
-                    @else
-                        {{ old('school') }}
-                    @endif
-                    </textarea>
-                    @error('school')
-                        <span class="invalid-feedback" style="display: block;" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-            </div>
-
-
-
-            <div class="form-group col-md-4">
-                <label for="email">Email</label>
-                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
+                <label for="parent_email">Parent's Email</label>
+                <input type="parent_email" class="form-control @error('parent_email') is-invalid @enderror" id="parent_email" name="parent_email"
                     autocomplete="off"
                     @if (isset($studentData))
-                        value="{{ $studentData->email}}"
+                        value="{{ $studentData->parent_email}}"
                     @else
-                        value="{{ old('email') }}"
+                        value="{{ old('parent_email') }}"
                     @endif
                     >
-                    @error('email')
+                    @error('parent_email')
                         <span class="invalid-feedback" style="display: block;" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
