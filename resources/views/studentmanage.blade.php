@@ -134,6 +134,15 @@ App::setLocale(Auth::user()->lang);
     .select2-container .select2-selection--single{
         height: auto;
     }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    }
+
+    /* Hide the calendar icon in Firefox */
+    input[type="date"] {
+        -moz-appearance: textfield;
+    }
 </style>
 
 <script>
@@ -250,7 +259,7 @@ App::setLocale(Auth::user()->lang);
                 <div class="form-group col-md-4">
                     <label for="dob">Student's Birthday</label>
                     <input type="date" class="form-control @error('dob') is-invalid @enderror" id="dob" name="dob"
-                        autocomplete="off" maxlength="10" data-date-format="DD MM YYYY"
+                        autocomplete="off" maxlength="10" data-date-format="DD MMMM YYYY"
                         @if (isset($studentData))
                             value="{{ $studentData->dob}}"
                         @else
@@ -263,10 +272,8 @@ App::setLocale(Auth::user()->lang);
                             </span>
                         @enderror
                 </div>
-
-
-            </div>
-
+            
+            
 
                 <div class="form-group col-md-4">
                     <label for="nic">Student's NIC</label>

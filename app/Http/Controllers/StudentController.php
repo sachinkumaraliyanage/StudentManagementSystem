@@ -145,21 +145,22 @@ class StudentController extends Controller
                 'parent_email' => ['email', 'max:255'],
             ]);
             $studentData = student::find($id);
-            // if ($request->nic != $teacherData->nic) {
-            //     $validated = $request->validate([
-            //         'nic' => ['required', 'max:10', 'regex:/^\d{9}[VvXx]$/', 'unique:teachers'],
-            //     ]);
-            // }
-            // if ($request->pno != $teacherData->pno) {
-            //     $validated = $request->validate([
-            //         'pno' => ['required', 'max:255', 'unique:teachers'],
-            //     ]);
-            // }
-            // if ($request->email != $teacherData->email) {
-            //     $validated = $request->validate([
-            //         'email' => ['email', 'max:255', 'unique:teachers'],
-            //     ]);
-            // }
+            if ($request->student_phone != $studentData->student_phone) {
+                $validated = $request->validate([
+                    'student_phone' => ['required', 'max:255', 'unique:students'],
+                ]);
+            }
+            if ($request->nic != $studentData->nic) {
+                $validated = $request->validate([
+                    'nic' => ['required', 'max:10', 'regex:/^\d{9}[VvXx]$/', 'unique:students'],
+                ]);
+            }
+
+            if ($request->email != $studentData->email) {
+                $validated = $request->validate([
+                    'email' => ['email', 'max:255', 'unique:students'],
+                ]);
+            }
 
             $studentData = new Student();
             $studentData->fname = $request->fname;
